@@ -43,7 +43,3 @@ class Fraction(object):
     def get_fraction(self):
         #TODO
         pass
-
-if __name__ == "__main__":
-    fraction = Fraction(5)
-    print(fraction.get_denominator())
