@@ -4,12 +4,16 @@ class Fraction(object):
         if denominator == 0:
             raise ZeroDivisionError
         
-        if isinstance(numerator, int):
+        if isinstance(numerator, float): 
+            self.numerator = 0
+            self.denominator = 1
+
+        elif isinstance(numerator, int):
             if isinstance(denominator, int):
                 self.numerator = numerator
                 self.denominator = denominator
             elif not isinstance(denominator, int):
-                print("0")
+                self.numerator = 0
             self.denominator = 1
         
         elif isinstance(numerator, str):
@@ -19,9 +23,11 @@ class Fraction(object):
                     numerator, denominator = int(numerator[0]), int(numerator[1])
                     self.numerator, self.denominator = numerator, denominator
                 except ValueError as e:
-                    print("0")
+                    self.numerator = 0
+                    self.denominator = 1
             else:
-                print("0")
+                self.numerator = 0
+                self.denominator = 1
             
     def gcd(a, b):
         if a == 0 or b == 0:
