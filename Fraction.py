@@ -41,7 +41,7 @@ class Fraction(object):
         if a == 0 or b == 0:
             return 0
         
-        # Implements the Euclidian algorithm
+        # Implements the Euclidean algorithm
         while b:
             a, b = b, a%b
         
