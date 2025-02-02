@@ -48,13 +48,28 @@ class Fraction(object):
         return abs(a)
 
     def get_numerator(self):
-        #TODO
-        pass
+        if self.numerator == 0 or self.denominator == 0:
+            return 0
+        else:
+            return self.numerator//Fraction.gcd(self.numerator,self.denominator)
 
     def get_denominator(self):
-        #TODO
-        pass
+        if self.denominator == 0:
+            return 0
+        if self.numerator == 0:
+            return 1
+        else:
+            return self.denominator//Fraction.gcd(self.numerator,self.denominator)
 
     def get_fraction(self):
-        #TODO
-        pass
+        a = self.get_numerator()
+        b = self.get_denominator()
+        if a == 0 or b == 0:
+            return '0'
+        else:
+            if (a < 0 and b < 0):
+                return str(abs(a)) + "/" + str(abs(b))
+            if (a < 0 or b < 0):
+                return "-" + str(abs(a)) + "/" + str(abs(b))
+            else: 
+                return str(abs(a)) + "/" + str(abs(b))
