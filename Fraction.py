@@ -48,20 +48,29 @@ class Fraction(object):
         return abs(a)
 
     def get_numerator(self):
+        '''
+        Returns the numerator of the fraction in lowest terms
+        '''
         if self.numerator == 0 or self.denominator == 0:
-            return 0
-        return self.numerator//Fraction.gcd(self.numerator, self.denominator)
+            return "0"
+        return str(self.numerator//Fraction.gcd(self.numerator, self.denominator))
 
     def get_denominator(self):
+        '''
+        Returns the numerator of the fraction in lowest terms
+        '''
         if self.numerator == 0 or self.denominator == 0:
-            return 0
-        return self.denominator//Fraction.gcd(self.numerator, self.denominator)
+            return "0"
+        return str(self.denominator//Fraction.gcd(self.numerator, self.denominator))
 
     def get_fraction(self):
-        num = self.get_numerator()
-        denom = self.get_denominator()
+        '''
+        Returns the numerator of the fraction in lowest terms
+        '''
+        num = int(self.get_numerator())
+        denom = int(self.get_denominator())
 
-        if self.numerator == 0 or self.denominator == 0:
+        if num == 0 or denom == 0:
             return "0"
         if num < 0 and denom < 0:
             return f"{abs(num)}/{abs(denom)}"
