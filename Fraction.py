@@ -57,7 +57,7 @@ class Fraction(object):
 
     def get_denominator(self):
         '''
-        Returns the numerator of the fraction in lowest terms
+        Returns the denominator of the fraction in lowest terms
         '''
         if self.numerator == 0 or self.denominator == 0:
             return "0"
@@ -65,7 +65,7 @@ class Fraction(object):
 
     def get_fraction(self):
         '''
-        Returns the numerator of the fraction in lowest terms
+        Returns the fraction in lowest terms
         '''
         num = int(self.get_numerator())
         denom = int(self.get_denominator())
